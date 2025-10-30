@@ -1,0 +1,6 @@
+anomaly_type,count
+duplicate_tx,0
+rx_without_tx,10
+direction_mismatch,0
+negative_latency,0
+duplicate_rx,0

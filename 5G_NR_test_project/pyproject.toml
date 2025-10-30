@@ -1,0 +1,56 @@
+[project]
+name = "5g-nr-test-project"
+version = "0.1.0"
+description = "My test project in 5G NR"
+authors = [
+    {name = "Igor Burdakov",email = "iburdakov@edu.hse.ru"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas (>=2.3.3,<3.0.0)",
+    "numpy (>=2.3.4,<3.0.0)",
+    "matplotlib (>=3.10.7,<4.0.0)",
+    "seaborn (>=0.13.2,<0.14.0)",
+    "pyyaml (>=6.0.3,<7.0.0)",
+    "click (>=8.3.0,<9.0.0)",
+    "pydantic (>=2.12.3,<3.0.0)",
+    "pyarrow (>=22.0.0,<23.0.0)",
+    "tqdm (>=4.67.1,<5.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "5g_nr_test_project", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "black (>=25.9.0,<26.0.0)",
+    "ruff (>=0.14.2,<0.15.0)",
+    "mypy (>=1.18.2,<2.0.0)",
+    "tqdm (>=4.67.1,<5.0.0)",
+    "pytest (>=8.4.2,<9.0.0)"
+]
+
+[tool.poetry.scripts]
+nr_metrics = "5g_nr_test_project.cli:main"
+
+[project.scripts]
+nr_metrics = "5g_nr_test_project.cli:main"
+
+[tool.black]
+line-length = 100
+target-version = ['py314']
+
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+
+[tool.mypy]
+python_version = "3.14"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true

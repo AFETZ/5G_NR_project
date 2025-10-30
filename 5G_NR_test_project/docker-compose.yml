@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  nr-metrics:
+    build: .
+    container_name: nr_metrics_demo
+    volumes:
+      - ./artifacts:/app/artifacts
+      - ./plots:/app/plots
+      - ./parsed_files:/app/parsed_files
+      - ./logs:/app/logs
+      - ./tests:/app/tests
+      - ./test_input_data:/app/test_input_data
+    command: make docker-test

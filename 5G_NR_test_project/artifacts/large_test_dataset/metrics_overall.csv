@@ -1,0 +1,2 @@
+tx_count,rx_count,pdr,latency_mean,latency_p50,latency_p95,latency_std,latency_count,sinr_avg,sinr_count
+124,89,0.717741935483871,218529.67415730338,175755.0,719679.599999996,202816.3598606662,89,,0.0
