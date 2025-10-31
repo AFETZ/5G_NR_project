@@ -10,7 +10,7 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.dirname(os.path.join(current_dir, '..', '..'))
 sys.path.insert(0, project_root)
 
-from .main_scripts.parser_factory import get_parser_factory
+from .main_scripts.parser_definition import get_parser_factory
 from .main_scripts.processor import MetricsCalculator
 from .visualization.plotter import Plotter
 

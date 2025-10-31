@@ -12,7 +12,7 @@ from configs.interfaces import ParserInterface
 from main_scripts.parsers import NJsonParser, CsvParser, Ns3CsvParser
 
 
-class ParserFactory:
+class ParserDefinition:
     """
     Фабрика для создания парсеров с проверкой соответствия интерфейсу
     """
@@ -32,6 +32,7 @@ class ParserFactory:
         :return:
             ParserInterface - возвращает экземпляр класса парсера, который может обработать файл
         """
+
         if not file_path.exists():
             raise FileNotFoundError(f"Файл не был найден: {file_path}")
 
@@ -57,9 +58,10 @@ class ParserFactory:
         return sorted(extentions)
 
 
-_default_parser_factory = ParserFactory()
+_default_parser_factory = ParserDefinition()
+print(CsvParser.supported_extensions)
 
-def get_parser_factory() -> ParserFactory:
+def get_parser_factory() -> ParserDefinition:
     """
     Простая функция для получения инициализированной фабрики
     :return:
